@@ -1,0 +1,113 @@
+<div class="row" >
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-preview center">
+            <h2> <span ng-show="singleTeam.teamname1">{{singleTeam.teamname1}}</span><span ng-show="!singleTeam.teamname1">{{singleTeam.teamname2}}</span></h2>
+            <h2>Team Statistics</h2>                    
+           <br>
+            <table class="table table-responsive table-bordered size">
+                <thead>
+                    <tr>
+                        <th >
+                            <h3></h3>
+                        </th>
+                        <th ng-if ="singleTeam.totalMatchesPlayed1.length !== 0">
+                            <h3>English Premier League 2015/16</h3>
+                        </th>
+                        <th ng-if ="singleTeam.totalMatchesPlayed2.length !== 0">
+                            <h3>English Premier League 2016/17</h3>
+                        </th>
+                    </tr>
+                </thead>
+                        
+                <tbody>
+                    <tr>
+                        <td class="bold">Matches Played</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed1.length !== 0">{{singleTeam.totalMatchesPlayed1.length}}</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed2.length !== 0">{{singleTeam.totalMatchesPlayed2.length}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Win</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed1.length !== 0">{{singleTeam.totalWins1.length}}</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed2.length !== 0">{{singleTeam.totalWins2.length}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Win Percentage</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed1.length !== 0">{{(singleTeam.totalWins1.length / singleTeam.totalMatchesPlayed1.length)*100 | number:2}} %</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed2.length !== 0">{{(singleTeam.totalWins2.length / singleTeam.totalMatchesPlayed2.length)*100 | number:2}} %</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Lost</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed1.length !== 0">{{singleTeam.totalLost1.length}}</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed2.length !== 0">{{singleTeam.totalLost2.length}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Lost Percentage</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed1.length !== 0">{{(singleTeam.totalLost1.length / singleTeam.totalMatchesPlayed1.length)*100 | number:2}} %</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed2.length !== 0">{{(singleTeam.totalLost2.length / singleTeam.totalMatchesPlayed2.length)*100 | number:2}} %</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Draw</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed1.length !== 0">{{singleTeam.totaldraw1.length}}</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed2.length !== 0">{{singleTeam.totaldraw2.length}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Goals Scored</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed1.length !== 0">{{singleTeam.totalgoals1}}</td>
+                        <td ng-if ="singleTeam.totalMatchesPlayed2.length !== 0">{{singleTeam.totalgoals2}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+                  
+            <table class="table table-responsive table-bordered size">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <h3>Total</h3>
+                        </th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>Total Matches Played</td>
+                        <td>{{singleTeam.totalMatchesPlayed}}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Matches Won</td>
+                        <td>{{singleTeam.totalWins}}</td>
+                    </tr>
+                    <tr>
+                        <td>Win Percentage</td>
+                        <td>{{(singleTeam.totalWins / singleTeam.totalMatchesPlayed)*100 | number:2}} %</td>
+                    </tr>
+                    <tr>
+                        <td>Total Matches Lost</td>
+                        <td>{{singleTeam.totalLost}}</td>
+                    </tr>
+                    <tr>
+                        <td>Lost Percentage</td>
+                        <td>{{(singleTeam.totalLost / singleTeam.totalMatchesPlayed)*100 | number:2}} %</td>
+                    </tr>
+                    <tr>
+                        <td>Total Matches Draw</td>
+                        <td>{{singleTeam.totaldraw}}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Goals Scored</td>
+                        <td>{{singleTeam.totalgoals}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+        </div>
+        <hr>
+
+
+        <ul class="pager">
+            <li class="next">
+                <a href="#/">Back to Home &rarr;</a>
+            </li>
+        </ul>
+    </div>
+</div>

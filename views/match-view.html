@@ -1,0 +1,27 @@
+<div class="row" >
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-preview center size">
+            <p><h2 class="bold"> {{singleMatch.team1.name}} vs {{singleMatch.team2.name}}</h2></p>
+            <p><span class="bold">Match Date- </span> {{singleMatch.date}}</p>
+            <p><span class="bold">Score- </span> {{singleMatch.score1}} : {{singleMatch.score2}}</p>
+            
+            <div ng-if="singleMatch.score1 > singleMatch.score2">
+                <p><span class="bold">Result- </span> {{singleMatch.team1.name}} Won by {{singleMatch.score1 - singleMatch.score2}} goal.</p>
+            </div>
+            <div ng-if="singleMatch.score2 > singleMatch.score1">
+                <p><span class="bold">Result- </span> {{singleMatch.team2.name}} Won by {{singleMatch.score2 - singleMatch.score1}} goal.</p>
+            </div>
+            <div ng-if="singleMatch.score2 == singleMatch.score1">
+                <p><span class="bold">Result- </span> Match Draw</p>
+            </div>
+        </div>
+        
+             
+        <!-- Pager -->
+        <ul class="pager">
+            <li class="next">
+                <a href="#/">Back to Home &rarr;</a>
+            </li>
+        </ul>
+    </div>
+</div>

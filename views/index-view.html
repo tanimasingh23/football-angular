@@ -1,0 +1,71 @@
+<div class="row">
+    <select ng-model="queryBy" class="form">
+        <option value="" disabled selected class="disabled">Search By</option>
+        <option value="$">Team Name</option>
+        <option value="date">Date</option>
+        <option value="score1">Score</option>
+    </select>   
+            
+    <input class="form" type="text" ng-model="query[queryBy]" / placeholder="Search" aria-label="Search">            
+    <hr>
+
+    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+        <h2>English Premier League 2015/16</h2>
+        <br>
+        <table class="table table-responsive table-bordered size">
+            <thead>
+                <tr>
+                    <th>Round</th>
+                    <th>Home</th>
+                    <th>Away</th>
+                    <th>Date</th>
+                    <th>Score</th>
+                    <th>More Info</th>
+                </tr>
+            </thead>
+            <tbody class="post-preview" ng-repeat="sport in mySport.sports">         
+                <tr ng-repeat="match in sport.matches | filter:query">
+                    <td>{{sport.name}}</td>
+                    <td><a ng-href="#/stats-view/{{ match.team1.key }}" title="View Team Statistics">{{match.team1.name}}</td>
+                    <td><a ng-href="#/stats-view/{{ match.team2.key }}" title="View Team Statistics">{{match.team2.name}}</td>
+                    <td>{{match.date}}</td>
+                    <td>{{match.score1}}<span ng-show="match.score1 === null">Data Not Available</span><span ng-hide="match.score1 === null">:</span>{{match.score2}}</td>
+                    <td><a ng-href="#/match-view/{{match.team1}}/{{match.team2}}/{{match.score1}}/{{match.score2}}/{{match.date}}">...</a></td>
+                </tr>
+            </tbody>
+        </table>
+            
+        <br>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+        
+            <h2>English Premier League 2016/17</h2>
+            <br>
+            <table class="table table-responsive table-bordered size">
+                <thead>
+                    <tr>
+                        <th>Round</th>
+                        <th>Home</th>
+                        <th>Away</th>
+                        <th>Date</th>
+                        <th>Score</th>
+                        <th>More Info</th>
+                    </tr>
+                </thead>
+                <tbody class="post-preview" ng-repeat="sport in mySport.sports1">           
+                                    
+                    <tr ng-repeat="match in sport.matches | filter:query">
+                        <td>{{sport.name}}</td>
+                        <td><a ng-href="#/stats-view/{{ match.team1.key }}" title="View Team Statistics">{{match.team1.name}}</td>
+                        <td><a ng-href="#/stats-view/{{ match.team2.key }}" title="View Team Statistics">{{match.team2.name}}</td>
+                        <td>{{match.date}}</td>
+                        <td>{{match.score1}}:{{match.score2}}</td>
+                        <td><a ng-href="#/match-view/{{match.team1}}/{{match.team2}}/{{match.score1}}/{{match.score2}}/{{match.date}}">...</a></td>
+                    </tr>
+                </tbody>
+            </table>       
+            <br>                    
+        </div>
+    <hr>
+</div>
